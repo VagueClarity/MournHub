@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>HomePage</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+         <style>
+             
+            .Header{
+                 
+                margin-top: 70px;
+            }
+         
+            #stream{
+                
+                padding-top: 20px;
+            }
+            
+            
+            
+          .navbar-nav > li{
+              
+              padding-left: 0px;
+              font-weight: bold;
+              margin-right: 70px;
+          }
+          .navbar-form{
+              
+              padding-left: 50px;
+          }
+           
+            .imgText{
+                position: absolute;
+                top: 180px;
+                left:0;
+                width: 100%;
+                
+            }
+            .imgText span{
+                
+               
+                color: #FF9900;
+                letter-spacing: -1px;
+                background: rgb(0,0,0);
+                background: rgba(0,0,0,0.7);
+                padding: 10px;
+            }
+            
+            .thumbnail {
+                position: relative;
+                padding: 0 0 0 0;
+                border: none;
+                border-radius: 0;
+              
+            }
+            
+            .thumbnail img {
+                object-fit: none;
+                max-height: 250px;
+                width: 100%;
+                height: 300px;
+                margin-bottom: 10px;
+            }
+          .second-navbar{
+              
+              top:50px;
+          }
+          .col-sm-4{
+              color: black;
+              padding-top: 20px;
+              margin: 0 auto;
+          }
+          
+          .dropdown-menu{
+              
+            background: darkgray;
+          }
+         
+          #about{
+              
+              font-family: "Times New Roman", Times, serif; 
+              color: #FF9900;
+          }
+         
+          html {
+            height: 100%;
+          }
+
+          body {
+            padding-top: 50px;
+            background: #000000;
+            color: #ffffff;
+            margin: 0;
+            min-height: 100%;
+            height: 100%;
+            position: relative;
+          }
+
+          .hub {
+            padding-top: 10px;
+            margin-left: 10px;
+            display: block;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 25px;
+            position: relative;
+
+            
+          
+          }
+
+          .hub span:nth-child(2) {
+           
+            background: #FF9900;
+            color: #000000;
+            border-radius: 5px;
+            padding: 0 1px 1px 1px;
+            display: inline-block;
+          }
+         
+        .slideanim {visibility:hidden;}
+        .slide {
+            animation-name: slide;
+            -webkit-animation-name: slide;
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+            visibility: visible;
+        }
+        @keyframes slide {
+          0% {
+            opacity: 0;
+            transform: translateY(70%);
+          } 
+          100% {
+            opacity: 1;
+            transform: translateY(0%);
+          }
+        }
+        @-webkit-keyframes slide {
+          0% {
+            opacity: 0;
+            -webkit-transform: translateY(70%);
+          } 
+          100% {
+            opacity: 1;
+            -webkit-transform: translateY(0%);
+          }
+        }
+         </style>
+      
+         
+    </head>
+    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset ="60">
+       <!-- Wrap all page content here -->
+    <div id="wrap">
+
+        <!-- Fixed navbar -->
+        <div class="navbar navbar-inverse  navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+               
+                <div class="hub">
+                    
+                        <span contenteditable="true">Mourn</span>
+                        <span contenteditable="true">hub</span>
+                     
+                </div>
+               
+            </div>
+             
+            <form class="navbar-form navbar-left" action="about_proto.html">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="search">
+                        <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                          <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                         </div>
+               </div>
+            </form>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#about1">About</a></li>
+                
+              </ul>
+            
+          </div>
+        </div>
+        
+          <!-- Second navBar -->
+         <div class="navbar navbar-inverse navbar-fixed-top second-navbar">
+            <div class="container">
+                <div class="navbar-header ">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".main-nav">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                  <ul class="nav navbar-nav navbar-left">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#videos">Mourn Videos</a></li>
+                    <li><a href="#cam">Live MournCam</a></li>
+                    <li><a href="#stars">MOURNSTARS</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#about">Nomads</a></li>
+                        <li><a href="#about">Memorialists</a></li>
+                        <li><a href="#about">Normalizers</a></li>
+                        <li><a href="#about">Activists</a></li>
+                        <li><a href="#about">Seekers</a></li>
+                        
+                      </ul>
+                    </li>
+                  </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+         
+        <!-- Home --> 
+        
+        <div id="home" class =" container">
+            
+        </div>
+        
+
+        <!-- Mourn Videos -->
+        <div id="videos" class="container bg-grey">
+            <div class="Header">
+              <h1>Hot Mourn Videos</h1>
+            </div>
+            <div class="col-sm-4">
+               
+               <iframe width="300" height="200" src="https://www.youtube.com/embed/ee925OTFBCA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <p style="font-family: Times New Roman; color:#FF9900"> Two Best friends cry then make up</p>
+                
+            </div>
+            <div class="col-sm-4">
+               <iframe width="300" height="200" src="https://www.youtube.com/embed/gsYL4PC0hyk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <p style="font-family: Times New Roman; color:#FF9900"> Mourning Lessons 101 </p>
+            </div>
+            <div class="col-sm-4">
+                <iframe width="300" height="200" src="https://www.youtube.com/embed/MIBPzWAOk78" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <p style="font-family: Times New Roman; color:#FF9900"> SADDEST MOMENT IN FORTNITE.U WONT BELIEVE WHAT HAPPENS NEXT?!!*(!??</p>
+            </div>
+            <div class="col-sm-4">
+                <iframe width="300" height="200" src="https://www.youtube.com/embed/XPOYF0vtVyY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <p style="font-family: Times New Roman; color:#FF9900"> MOURNING COMPILATION(NOT AMV)</p>
+            </div>
+             <div class="col-sm-4">
+                <iframe width="300" height="200" src="https://www.youtube.com/embed/XKxWrLY8o7M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <p style="font-family: Times New Roman; color:#FF9900"> ALL STARS BUT SAD. 99.99% SURE YOU WILL CRY!!!!!!</p>
+            </div>
+             <div class="col-sm-4">
+                <iframe width="300" height="200" src="https://www.youtube.com/embed/VYOjWnS4cMY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <p style="font-family: Times New Roman; color:#FF9900">Black man MOURNS for AMERICA</p>
+            </div>
+           
+            
+        
+        </div>
+        
+        <!-- Live MournCams -->
+       
+         <div id="cam" class="container bg-grey">
+             <div class = "Header">
+                <h1  >Live MournCam</h1>
+             </div>
+             <div id="stream">
+                     <iframe src="https://player.twitch.tv/?channel=vagueclarity" frameborder="0" allowfullscreen="true" scrolling="no" height="300" width="400"></iframe><a href="https://www.twitch.tv/vagueclarity?tt_content=text_link&tt_medium=live_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:14px; color:#FF9900">Mourn live with VagueClarity on www.twitch.tv</a>
+             </div><br>
+         </div>
+        
+        
+        <!-- Types of Mourning -->
+        <div id="about" class ="container bg-grey">
+            
+            
+            <center><h2 style = "color: white"> TYPES OF MOURNERS</h2></center><br>
+            
+            
+            
+            
+            <h4 ><strong style = "color: white">Nomads:</strong> are characterized by a range of emotions, including denial, anger, and confusion about 
+                what to do with their lives. Nomads have not yet resolved their grief. They don’t often understand how their loss has affected their lives.
+                
+            </h4><br>
+            <h4>
+                <strong style = "color: white">Memorialists:</strong>
+                are committed to preserving the memory of their loved ones by creating
+                concrete memorials and rituals to honor them. These range from buildings,
+                art, gardens, poems, and songs to foundations in their loved one’s name.
+            </h4>
+            <h4><strong style = "color: white">Normalizers:</strong>
+             place primary emphasis on their family, friends, and community. They are committed to creating or re-creating 
+             them because of their sense of having lost family, friends, and community, 
+             as well as the lifestyle that accompanies them, when their loved one died.
+            </h4><br>
+            
+            <h4><strong style = "color: white">Activists:</strong>
+             create meaning from their loss by contributing to the quality of life of others through activities or careers that give them a purpose in life. Their main focus is on education and on helping 
+             other people who are dealing with the issues that caused their loved one’s death, such as violence, a terminal or sudden illness, or social problems.
+            </h4><br>
+            
+            <h4><strong style = "color: white">Seekers:</strong>
+            look outward to the universe and ask existential questions about their relationship to others and the world. They tend to adopt religious, philosophical, or spiritual 
+            beliefs to create meaning in their lives and provide a sense of belonging that they either never h ad or lost when their loved one died.
+            
+            </h4><br>
+           
+            
+        </div>
+        
+        
+        <!-- MournStars -->
+       
+        <div id="stars" class ="container bg-grey">
+            <h1> MOURNSTARS</h1>
+            <div class = "col-sm-4">
+                <div class = "thumbnail">
+                    <a href="https://www.npr.org/2013/06/26/195565696/belly-dancing-for-the-dead-a-day-with-chinas-top-mourner">
+                    <img src ="https://r.hswstatic.com/w_907/gif/unique-careers-3.jpg" alt = "Hu XingLian" width="200" height="300">
+                    </a>
+                    <p  class = "imgText" style = "text-align: center "><span>Hu Xinglian</span></p>
+                </div>
+                
+            </div>
+            <div class = "col-sm-4">
+                <div class = "thumbnail">
+                    <a href="http://www.bbc.com/news/magazine-21479399">
+                    <img src ="http://www.diarioextra.com/files/Dnews/images/detail/641_liu.jpg" alt="Liu Jun-Lin" width="200" height="300">
+                    </a>
+                    <p class = "imgText" style = "text-align: center "><span>Liu Jun-Lin</span></p>
+                </div>
+                
+            </div>
+            <div class = "col-sm-4">
+                <div class = "thumbnail">
+                    <a href="https://en.wikipedia.org/wiki/SpongeBob_SquarePants">
+                    <img src ="https://i.pinimg.com/originals/45/15/21/4515210677b5aafcc65f0446396ca11b.jpg "  width ="200" height = "300" >
+                     </a>
+                    <p class = "imgText" style = "text-align: center "><span>SpongeBob</span></p>
+                </div>
+                
+            </div>
+            <div class = "col-sm-4">
+                <div class = "thumbnail">
+                    <a href="https://en.wikipedia.org/wiki/Rocky_Lockridge">
+                    <img src ="http://i1.ytimg.com/vi/X6_xGRk3nqM/hqdefault.jpg " width ="200" height = "300">
+                     </a>
+                    <p class = "imgText" style = "text-align: center "><span>Rocky Lockridge</span></p>
+                </div>
+                
+            </div>
+            <div class = "col-sm-4">
+                <div class = "thumbnail">
+                    <a href="https://en.wikipedia.org/wiki/Pepe_the_Frog">
+                    <img src ="https://i.imgflip.com/oze4t.jpg " width ="200" height = "300">
+                     </a>
+                    <p class = "imgText" style = "text-align: center "><span>Pepe</span></p>
+                </div>
+                
+            </div>
+            <div class = "col-sm-4">
+                <div class = "thumbnail">
+                    <a href="http://marvel.wikia.com/wiki/Peter_Parker_(Earth-616)">
+                    <img src ="https://i.imgflip.com/1i8dmx.jpg" width ="200" height = "300">
+                     </a>
+                    <p class = "imgText" style = "text-align: center "><span> <strike>Spiderman</strike> Peter Parker</span></p>
+                </div>
+                
+            </div>
+           
+        </div><br><br><br><br><br><br>
+        
+        <div id= "about1" class ="container">
+             <div id="About" class = "container-fluid text-center bg-grey">
+                <h1 style="color: #FF9900"> <strong>ABOUT</strong> </h1>
+                <p>
+                    <a href="https://en.wikipedia.org/wiki/Mourning" style = "color:#FF9900">Mourning</a> is, in the simplest sense, grief over someone's death. The word is also used to describe a cultural complex of behaviours in which the bereaved participate or are expected to participate. Customs vary between cultures and evolve over time, though many core behaviors remain constant.
+                    Wearing black clothes is one practice followed in many countries, though other forms of dress are seen. Those most affected by the loss of a loved one often observe a period of grieving, marked by withdrawal from social events and quiet, respectful behavior. People may follow religious traditions for such occasions.
+                </p>
+                Mourning may apply to the death of, or anniversary of the death of, an important individual like a local leader, monarch, religious figure,family etc. State mourning may occur on such an occasion. In recent years, some traditions have given way to less strict practices, though many customs and traditions continue to be followed.
+                <center>Press <a href="http://knowyourmeme.com/memes/press-f-to-pay-respects" style = "color:#FF9900">F</a> to pay Respect</center>
+            </div>
+            
+            
+        </div>
+        
+        
+        
+        
+    </div>
+       
+       
+    
+    <script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function(){
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+
+      $(window).scroll(function() {
+        $(".slideanim").each(function(){
+          var pos = $(this).offset().top;
+
+          var winTop = $(window).scrollTop();
+            if (pos < winTop + 600) {
+              $(this).addClass("slide");
+            }
+        });
+      });
+    })
+    </script>
+       
+       
+       
+       
+
+      <div id="footer">
+        <div class="container">
+          <p class="text-muted credit">Please give me an A.</p>
+        </div>
+      </div>
+
+    </body>
+</html>
